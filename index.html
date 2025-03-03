@@ -488,26 +488,7 @@ function showSlides() {
 			<div class="org_product_section">
 				<div class="row">	
 				
-				<?php 
-
-$dir = "products"; 
-$imageCounter = 0;
-if ($opendir = opendir($dir)) 
-{ 
-  $images=array();
-  while (($file = readdir($opendir)) !==FALSE) 
-  { 
-   if($file != "." && $file != "..") 
-   {
-    $images["$file"]=$file;
-   }
-  } 
-} 
-natcasesort($images);
-foreach($images as $image)
-{
-	$imageCounter++;
- ?>
+				
  <div class="col-md-4">
 						<div class="org_product_block">
 							<span class="product_label">Trending</span>
@@ -518,10 +499,7 @@ foreach($images as $image)
 					</div>
  
  
- <?php
- if (!($imageCounter % 6)) break;
-}
-?>
+ 
 					
 					
 					
@@ -602,10 +580,10 @@ foreach($images as $image)
                             <img src="images/footer_underline.png" alt="image" />
                         </div>
                         <ul class="list-group">
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="aboutus.php">About Us</a></li><br>
-                            <li><a href="products.php">Products</a></li>
-                            <li><a href="contactus.php">Contact Us</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="aboutus.html">About Us</a></li><br>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
                             
                         </ul>
                     </div>
