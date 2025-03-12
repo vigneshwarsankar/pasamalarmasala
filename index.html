@@ -652,24 +652,28 @@ function showSlides() {
 <script  src="js/revolution.extension.slideanims.min.js"></script>
 <script  src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
- <script>
+ 	
+	<script>
         // Image folder path (Modify based on your folder structure)
         const folderPath = "products/";
 
         // List of images (Manually or fetched from the server)
         const imageFiles = ["image1.jpeg", "image2.jpeg", "image3.jpeg", "image4.jpeg", "image5.jpeg", "image6.jpeg", "image7.jpeg", "image8.jpeg", "image9.jpeg", "image10.jpeg", "image11.jpeg", "image12.jpeg", "image13.jpeg", "image14.jpeg", "image15.jpeg", "image16.jpeg", "image17.jpeg", "image18.jpeg", "image19.jpeg", "image20.jpeg","image21.jpeg","image22.jpeg","image23.jpeg","image24.jpeg","image25.jpeg","image26.jpeg","image27.jpeg","image28.jpeg"];
 
-        // Target div to display images
-        const imageContainer = document.querySelectorAll(".org_product_image");
+        // Select all divs with class "image-container"
+        const imageContainers = document.querySelectorAll(".org_product_image");
 
-        // Loop through images and add to the div
+        // Loop through images and add to each div with the class "image-container"
         imageFiles.forEach(image => {
             let imgElement = document.createElement("img");
             imgElement.src = folderPath + image;
             imgElement.classList.add("image-item"); // Add CSS class
-            imageContainer.appendChild(imgElement);
+
+            // Append to each .image-container element (if multiple exist)
+            imageContainers.forEach(container => container.appendChild(imgElement.cloneNode()));
         });
-    </script>	
+    </script>
+
 </body>
 
 </html>
