@@ -667,7 +667,7 @@ function showSlides() {
         imageFiles.forEach(image => {
             let imgElement = document.createElement("img");
             imgElement.src = folderPath + image;
-            imgElement.classList.add("image-item"); // Add CSS class
+            imgElement.classList.add("org_product_image"); // Add CSS class
 
             // Append to each .image-container element (if multiple exist)
             imageContainers.forEach(container => container.appendChild(imgElement.cloneNode()));
