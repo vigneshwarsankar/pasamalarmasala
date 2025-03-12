@@ -221,7 +221,10 @@ font-size: 27px;
 box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4), 0 0 0 10px #f5be55;
 
 }
-
+.image-item{
+	height:300px;
+	width:300px;
+}
         @media only screen and (max-width: 600px) {
   
 }
@@ -481,7 +484,7 @@ function showSlides() {
 				<div class="col-lg-6 col-md-6">
 					<div class="clv_heading">
 						<h3>our products</h3>
-						<div class="clv_underline"><img src="images/org_underline2.png" alt="image" /></div>
+						<div class="clv_underline" ><img src="images/org_underline2.png" alt="image" /></div>
 						</div>
 				</div>
 			</div>
@@ -492,7 +495,7 @@ function showSlides() {
  <div class="col-md-4">
 						<div class="org_product_block">
 							<span class="product_label">Trending</span>
-							<div class="org_product_image"><img src="" alt="image" width="300px" height="300px"/></div>					
+							<div class="org_product_image" id="imageContainer"></div>					
 							
 							<a href="https://api.whatsapp.com/send?phone=+918939771299&text=Enquiry About--" target="_blank" style="background:green;">Enquiry in Whatsapp</a>
 						</div>
@@ -653,6 +656,24 @@ function showSlides() {
 <script  src="js/revolution.extension.slideanims.min.js"></script>
 <script  src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
+ <script>
+        // Image folder path (Modify based on your folder structure)
+        const folderPath = "products/";
+
+        // List of images (Manually or fetched from the server)
+        const imageFiles = ["image1.jpeg", "image2.jpeg", "image3.jpeg", "image4.jpeg", "image5.jpeg", "image6.jpeg", "image7.jpeg", "image8.jpeg", "image9.jpeg", "image10.jpeg", "image11.jpeg", "image12.jpeg", "image13.jpeg", "image14.jpeg", "image15.jpeg", "image16.jpeg", "image17.jpeg", "image18.jpeg", "image19.jpeg", "image20.jpeg","image21.jpeg","image22.jpeg","image23.jpeg","image24.jpeg","image25.jpeg","image26.jpeg","image27.jpeg","image28.jpeg"];
+
+        // Target div to display images
+        const imageContainer = document.getElementById("imageContainer");
+
+        // Loop through images and add to the div
+        imageFiles.forEach(image => {
+            let imgElement = document.createElement("img");
+            imgElement.src = folderPath + image;
+            imgElement.classList.add("image-item"); // Add CSS class
+            imageContainer.appendChild(imgElement);
+        });
+    </script>	
 </body>
 
 </html>
